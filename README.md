@@ -1,5 +1,7 @@
 # hacka-ccr-backend
 
+*URL do projeto backend:* 'https://floating-reef-30152.herokuapp.com/'
+
 Projeto backend da equipe 145 do Hackathon CCR 2021
 
 Equipe:
@@ -117,3 +119,43 @@ public interface PessoaRepository extends CrudRepository<Pessoa, Long>{
 }
 ```
 
+
+## Deploy
+
+*Todos os comandos devem ser executados dentro da raiz do projeto.*
+  
+  
+1. Efetue o merge do código da sua branch pra master;
+
+```
+git merge master
+```
+  
+2. Efetue o commit na master
+
+```
+git checkout master
+git push origin master
+```
+  
+3. Efetue o login na sua conta Heroku, na pasta do projeto.
+
+```
+heroku login -i
+```
+
+*-i login via terminal*
+
+    
+4. Efetue o commit na branch do Heroku. Deploy já vai ser iniciado.
+
+```
+git push heroku master
+```
+
+Se tudo ocorreu bem no log.  
+
+Pronto! Deploy executado!
+
+
+Url: https://floating-reef-30152.herokuapp.com/ 
