@@ -164,13 +164,14 @@ Url: https://floating-reef-30152.herokuapp.com/
 ## Scripts
 ### Banco de dados
 
--- Auto Declaração
+-- Auto Declaração  
 INSERT INTO public.auto_declaracao(id, nome) VALUES (1, 'branca');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (2, 'preta');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (3, 'parda');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (4, 'amarela');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (5, 'indígena');
-
+  
+  
 -- Curso
 INSERT INTO public.curso(id, nome, descricao, link) VALUES (1, 'Microsoft Office 365 - Conhecendo o Teams', 'O Office 365 é uma coleção de aplicativos da Microsoft que reúne as melhores ferramentas para as pessoas trabalharem de forma colaborativa e produtiva. Este curso é composto de sete vídeos, nos quais você aprenderá algumas funcionalidades da ferramenta Teams, para que possa trabalhar, de maneira eficiente, com uma plataforma de comunicação e colaboração no local de trabalho.','https://www.ev.org.br/cursos/microsoft-office-365-conhecendo-o-teams');
 
