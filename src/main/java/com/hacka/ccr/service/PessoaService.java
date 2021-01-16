@@ -1,16 +1,20 @@
 package com.hacka.ccr.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hacka.ccr.dto.AutenticacaoDTO;
 import com.hacka.ccr.dto.IdiomaNivelDTO;
 import com.hacka.ccr.dto.InteresseDTO;
 import com.hacka.ccr.dto.RedeSocialLinkDTO;
 import com.hacka.ccr.exception.CcrException;
+import com.hacka.ccr.model.Autenticacao;
 import com.hacka.ccr.model.Idioma;
 import com.hacka.ccr.model.Interesse;
 import com.hacka.ccr.model.Pessoa;
@@ -18,6 +22,7 @@ import com.hacka.ccr.model.PessoaIdioma;
 import com.hacka.ccr.model.PessoaInteresse;
 import com.hacka.ccr.model.PessoaRedeSocial;
 import com.hacka.ccr.model.RedeSocial;
+import com.hacka.ccr.repository.AutenticacaoRepository;
 import com.hacka.ccr.repository.PessoaIdiomaRepository;
 import com.hacka.ccr.repository.PessoaInteresseRepository;
 import com.hacka.ccr.repository.PessoaRedeSocialRepository;
@@ -37,15 +42,29 @@ public class PessoaService {
 	
 	@Autowired
 	private PessoaInteresseRepository pessoaInteresseRepository;
+	
+	@Autowired
+	private AutenticacaoRepository autenticacaoRepository;
 
 	@Transactional
 	public Pessoa salvar(Pessoa pessoa) throws CcrException {
 		List<IdiomaNivelDTO> idiomas = pessoa.getIdiomas();
 		List<RedeSocialLinkDTO> redes = pessoa.getRedes();
 		List<InteresseDTO> interesses = pessoa.getInteresses();
+		validarEmail(pessoa);
+		pessoa.setSenha(Cripto(pessoa.getSenha()));
 		pessoa = repository.save(pessoa);
 		salvarDadosTransientes(pessoa, idiomas, redes, interesses);
 		return pessoa;
+	}
+
+	private void validarEmail(Pessoa pessoa) throws CcrException {
+		if(pessoa.getId() == null) {
+			Pessoa pessoaBD = repository.obterPessoaEmail(pessoa.getEmail());
+			if(pessoaBD !=null) {
+				throw new CcrException("E-mail informado já existe na base de dados.");
+			}
+		}
 	}
 
 	private void salvarDadosTransientes(Pessoa pessoa, List<IdiomaNivelDTO> idiomas, List<RedeSocialLinkDTO> redes,
@@ -159,6 +178,36 @@ public class PessoaService {
 			preencherDadosTransientes(pessoa);
 		});
 		return pessoas;
+	}
+	
+	public AutenticacaoDTO autenticar(AutenticacaoDTO autenticacaoDTO) {
+		Pessoa pessoa = repository.obterPessoaEmailSenha(autenticacaoDTO.getEmail(), Cripto(autenticacaoDTO.getSenha()));
+		if(pessoa !=null) {
+			autenticacaoDTO.setAutenticado(Boolean.TRUE);
+			autenticacaoDTO.setToken(UUID.randomUUID().toString());
+			Autenticacao autenticao = new Autenticacao(autenticacaoDTO.getToken(), LocalDateTime.now());
+			autenticacaoRepository.save(autenticao);
+		}else {
+			autenticacaoDTO.setAutenticado(Boolean.FALSE);
+		}
+		return autenticacaoDTO;
+	}
+	
+	public static String Cripto(String senha){
+		int contador, tamanho,codigoASCII;
+		String senhaCriptografada = "";
+		tamanho = senha.length();
+		senha = senha.toUpperCase();
+		contador = 0;
+		
+		while(contador <tamanho)
+		{
+			codigoASCII = senha.charAt(contador)+130;
+			senhaCriptografada = senhaCriptografada +(char) codigoASCII;
+			contador++;
+		}
+		
+		return senhaCriptografada;
 	}
 
 }
