@@ -3,15 +3,18 @@ package com.hacka.ccr.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+import com.hacka.ccr.dto.IdiomaNivelDTO;
+import com.hacka.ccr.dto.InteresseDTO;
+import com.hacka.ccr.dto.RedeSocialLinkDTO;
+
 
 @Entity
 public class Pessoa {
@@ -60,11 +63,23 @@ public class Pessoa {
 	@JoinColumn(name = "id_formacao_academica")
 	private FormacaoAcademica formacaoAcademica;
 
-	@OneToMany(mappedBy = "pessoa", targetEntity = PessoaIdioma.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<PessoaIdioma> idiomas;
+	@Transient
+	private List<IdiomaNivelDTO> idiomas;
+	
+	@Transient
+	private List<RedeSocialLinkDTO> redes;
+	
+	@Transient
+	private List<InteresseDTO> interesses;
+	
+	public Pessoa() {
+		super();
+	}
 
-	@OneToMany(mappedBy = "pessoa", targetEntity = PessoaRedeSocial.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<PessoaRedeSocial> redesSociais;
+	public Pessoa(Long id) {
+		super();
+		this.id = id;
+	}
 
 	public Long getId() {
 		return id;
@@ -226,20 +241,28 @@ public class Pessoa {
 		this.formacaoAcademica = formacaoAcademica;
 	}
 
-	public List<PessoaIdioma> getIdiomas() {
+	public List<IdiomaNivelDTO> getIdiomas() {
 		return idiomas;
 	}
 
-	public void setIdiomas(List<PessoaIdioma> idiomas) {
+	public void setIdiomas(List<IdiomaNivelDTO> idiomas) {
 		this.idiomas = idiomas;
 	}
 
-	public List<PessoaRedeSocial> getRedesSociais() {
-		return redesSociais;
+	public List<RedeSocialLinkDTO> getRedes() {
+		return redes;
 	}
 
-	public void setRedesSociais(List<PessoaRedeSocial> redesSociais) {
-		this.redesSociais = redesSociais;
+	public void setRedes(List<RedeSocialLinkDTO> redes) {
+		this.redes = redes;
+	}
+
+	public List<InteresseDTO> getInteresses() {
+		return interesses;
+	}
+
+	public void setInteresses(List<InteresseDTO> interesses) {
+		this.interesses = interesses;
 	}
 
 }

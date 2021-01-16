@@ -22,6 +22,15 @@ public class Idioma {
 	@OneToMany(mappedBy = "idioma", targetEntity = PessoaIdioma.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<PessoaIdioma> pessoaIdioma;
 
+	public Idioma() {
+		super();
+	}
+
+	public Idioma(Long id) {
+		super();
+		this.id = id;
+	}
+
 	public Long getId() {
 		return id;
 	}

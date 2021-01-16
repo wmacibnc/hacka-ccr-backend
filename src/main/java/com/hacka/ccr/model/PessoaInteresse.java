@@ -8,22 +8,21 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class PessoaIdioma {
+public class PessoaInteresse {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Integer nivel;
 
 	// Relacionamento com Pessoa
 	@ManyToOne
 	@JoinColumn(name = "id_pessoa")
 	private Pessoa pessoa;
 
-	// Relacionamento com Idioma
+	// Relacionamento com Interesse
 	@ManyToOne
-	@JoinColumn(name = "id_idioma")
-	private Idioma idioma;
+	@JoinColumn(name = "id_interesse")
+	private Interesse interesse;
 
 	public Long getId() {
 		return id;
@@ -33,12 +32,12 @@ public class PessoaIdioma {
 		this.id = id;
 	}
 
-	public Integer getNivel() {
-		return nivel;
+	public Interesse getInteresse() {
+		return interesse;
 	}
 
-	public void setNivel(Integer nivel) {
-		this.nivel = nivel;
+	public void setInteresse(Interesse interesse) {
+		this.interesse = interesse;
 	}
 
 	public Pessoa getPessoa() {
@@ -47,22 +46,6 @@ public class PessoaIdioma {
 
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
-	}
-
-	public Idioma getIdioma() {
-		return idioma;
-	}
-
-	public void setIdioma(Idioma idioma) {
-		this.idioma = idioma;
-	}
-	
-	public Long idIdioma() {
-		return this.idioma.getId();
-	}
-	
-	public String descricaoIdioma() {
-		return this.idioma.getNome();
 	}
 
 }

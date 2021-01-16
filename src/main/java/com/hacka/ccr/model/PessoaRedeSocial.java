@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class PessoaRedeSocial {
 
@@ -16,11 +18,13 @@ public class PessoaRedeSocial {
 	private String link;
 
 	// Relacionamento com Pessoa
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "id_pessoa")
 	private Pessoa pessoa;
 
 	// Relacionamento com RedeSocial
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "id_rede_social")
 	private RedeSocial redeSocial;

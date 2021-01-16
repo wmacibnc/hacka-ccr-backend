@@ -165,24 +165,35 @@ Url: https://floating-reef-30152.herokuapp.com/
 ### Banco de dados
 
 -- Auto Declaração  
+
+```
 INSERT INTO public.auto_declaracao(id, nome) VALUES (1, 'branca');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (2, 'preta');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (3, 'parda');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (4, 'amarela');
 INSERT INTO public.auto_declaracao(id, nome) VALUES (5, 'indígena');
-  
-  
+```
+     
 -- Curso
-INSERT INTO public.curso(id, nome, descricao, link) VALUES (1, 'Microsoft Office 365 - Conhecendo o Teams', 'O Office 365 é uma coleção de aplicativos da Microsoft que reúne as melhores ferramentas para as pessoas trabalharem de forma colaborativa e produtiva. Este curso é composto de sete vídeos, nos quais você aprenderá algumas funcionalidades da ferramenta Teams, para que possa trabalhar, de maneira eficiente, com uma plataforma de comunicação e colaboração no local de trabalho.','https://www.ev.org.br/cursos/microsoft-office-365-conhecendo-o-teams');
 
+```
+INSERT INTO public.curso(id, nome, descricao, link) VALUES (1, 'Microsoft Office 365 - Conhecendo o Teams', 'O Office 365 é uma coleção de aplicativos da Microsoft que reúne as melhores ferramentas para as pessoas trabalharem de forma colaborativa e produtiva. Este curso é composto de sete vídeos, nos quais você aprenderá algumas funcionalidades da ferramenta Teams, para que possa trabalhar, de maneira eficiente, com uma plataforma de comunicação e colaboração no local de trabalho.','https://www.ev.org.br/cursos/microsoft-office-365-conhecendo-o-teams');
+```
+  
 -- Estado Civil
+
+```
 INSERT INTO public.estado_civil(id, nome) VALUES (1, 'solteiro');
 INSERT INTO public.estado_civil(id, nome) VALUES (2, 'casado');
 INSERT INTO public.estado_civil(id, nome) VALUES (3, 'separado');
 INSERT INTO public.estado_civil(id, nome) VALUES (4, 'divorciado');
 INSERT INTO public.estado_civil(id, nome) VALUES (5, 'viúvo');
+```
+
 
 -- Formação Academica
+
+```
 insert into public.formacao_academica(id, nome) VALUES (1, 'Administração - Bacharelado');
 insert into public.formacao_academica(id, nome) VALUES (2, 'Agronomia - Bacharelado');
 insert into public.formacao_academica(id, nome) VALUES (3, 'Arqueologia - Bacharelado');
@@ -280,16 +291,21 @@ insert into public.formacao_academica(id, nome) VALUES (94, 'Teologia - Bacharel
 insert into public.formacao_academica(id, nome) VALUES (95, 'Terapia Ocupacional - Bacharelado');
 insert into public.formacao_academica(id, nome) VALUES (96, 'Turismo - Bacharelado');
 insert into public.formacao_academica(id, nome) VALUES (97, 'Zootecnia - Bacharelado');
-
+```
+  
 -- Genero
+
+```
 insert into public.genero(id, nome) VALUES(1, 'Masculino');
 insert into public.genero(id, nome) VALUES(2, 'Feminino');
 insert into public.genero(id, nome) VALUES(3, 'Outros');
 insert into public.genero(id, nome) VALUES(4, 'Não binário');
 insert into public.genero(id, nome) VALUES(5, 'Prefiro não dizer');
-
-
+```
+  
 -- Idioma
+
+```
 insert into public.idioma(id, nome) VALUES(1, 'Inglês');
 insert into public.idioma(id, nome) VALUES(2, 'Chinês');
 insert into public.idioma(id, nome) VALUES(3, 'Hindi');
@@ -300,8 +316,11 @@ insert into public.idioma(id, nome) VALUES(7, 'Bengali');
 insert into public.idioma(id, nome) VALUES(8, 'Russo');
 insert into public.idioma(id, nome) VALUES(9, 'Português');
 insert into public.idioma(id, nome) VALUES(10, 'Indonésio');
-
+```
+  
 -- Nacionalidade
+
+```
 insert into public.nacionalidade(id, nome) VALUES (1, 'Afeganistão');
 insert into public.nacionalidade(id, nome) VALUES (2, 'África do Sul');
 insert into public.nacionalidade(id, nome) VALUES (3, 'Albânia');
@@ -458,12 +477,72 @@ insert into public.nacionalidade(id, nome) VALUES (153, 'Uruguai');
 insert into public.nacionalidade(id, nome) VALUES (154, 'Venezuela');
 insert into public.nacionalidade(id, nome) VALUES (155, 'Zâmbia');
 insert into public.nacionalidade(id, nome) VALUES (156, 'Zimbábue');
-
+```
+  
 -- Rede Social
+
+```
 insert into public.rede_social (id, nome) VALUES (1, 'LinkedIn');
 insert into public.rede_social (id, nome) VALUES (2, 'Facebook');
 insert into public.rede_social (id, nome) VALUES (3, 'YouTube');
 insert into public.rede_social (id, nome) VALUES (4, 'Instagram');
 insert into public.rede_social (id, nome) VALUES (5, 'Behance');
+```
 
+-- Interesse
 
+```
+
+insert into public.interesse(id, nome) VALUES(1, 'Viajar');
+insert into public.interesse(id, nome) VALUES(2, 'Ter um canal no youtube');
+insert into public.interesse(id, nome) VALUES(3, 'Jogar carta com amigos');
+insert into public.interesse(id, nome) VALUES(4, 'Praticar artes marciais');
+insert into public.interesse(id, nome) VALUES(5, 'Ser adepto as palavras cruzadas');
+insert into public.interesse(id, nome) VALUES(6, 'Estar em contato com a natureza');
+insert into public.interesse(id, nome) VALUES(7, 'Visitar museus');
+insert into public.interesse(id, nome) VALUES(8, 'Ir ao cinemaIr ao cinema');
+insert into public.interesse(id, nome) VALUES(9, 'Pescar');
+insert into public.interesse(id, nome) VALUES(10, 'Ir ao estádio de futebol');
+insert into public.interesse(id, nome) VALUES(11, 'Assistir peças de teatro');
+insert into public.interesse(id, nome) VALUES(12, 'Fazer aulas de teatro');
+insert into public.interesse(id, nome) VALUES(13, 'Ler livrosler livros');
+insert into public.interesse(id, nome) VALUES(14, 'Dançar balé');
+insert into public.interesse(id, nome) VALUES(15, 'Acampar com os amigos');
+insert into public.interesse(id, nome) VALUES(16, 'Fazer trilhas');
+insert into public.interesse(id, nome) VALUES(17, 'Participar de corridas');
+insert into public.interesse(id, nome) VALUES(18, 'Desenhardesenhar');
+insert into public.interesse(id, nome) VALUES(19, 'Escrever poesias');
+insert into public.interesse(id, nome) VALUES(20, 'Ouvir músicas');
+insert into public.interesse(id, nome) VALUES(21, 'Dedicar-se a um voluntariado');
+insert into public.interesse(id, nome) VALUES(22, 'Estudar');
+insert into public.interesse(id, nome) VALUES(23, 'Cuidar de plantas');
+insert into public.interesse(id, nome) VALUES(24, 'Jogar tênis');
+insert into public.interesse(id, nome) VALUES(25, 'Andar de skateandar de skate');
+insert into public.interesse(id, nome) VALUES(26, 'Praticar yoga e meditação');
+insert into public.interesse(id, nome) VALUES(27, 'Fazer um curso de idiomas');
+insert into public.interesse(id, nome) VALUES(28, 'Fotografar');
+insert into public.interesse(id, nome) VALUES(29, 'Escrever para um blog');
+insert into public.interesse(id, nome) VALUES(30, 'Pedalarpedalar');
+insert into public.interesse(id, nome) VALUES(31, 'Tocar um instrumento musical');
+insert into public.interesse(id, nome) VALUES(32, 'Fazer artesanato');
+insert into public.interesse(id, nome) VALUES(33, 'Planejar eventos');
+insert into public.interesse(id, nome) VALUES(34, 'Cozinhar');
+insert into public.interesse(id, nome) VALUES(35, 'Decorar ambientes');
+insert into public.interesse(id, nome) VALUES(36, 'Assistir ao pôr ou o nascer do sol');
+insert into public.interesse(id, nome) VALUES(37, 'Jogar vôleijogar vôlei');
+insert into public.interesse(id, nome) VALUES(38, 'Surfar');
+insert into public.interesse(id, nome) VALUES(39, 'Colecionar objetos');
+insert into public.interesse(id, nome) VALUES(40, 'Fazer natação');
+insert into public.interesse(id, nome) VALUES(41, 'Editar vídeo');
+insert into public.interesse(id, nome) VALUES(42, 'Costurar e produzir os seus próprios looks');
+insert into public.interesse(id, nome) VALUES(43, 'Escalar');
+insert into public.interesse(id, nome) VALUES(44, 'Jogar futeboljogar futebol');
+insert into public.interesse(id, nome) VALUES(45, 'Treinar musculação');
+insert into public.interesse(id, nome) VALUES(46, 'Dançar');
+insert into public.interesse(id, nome) VALUES(47, 'Ensinar');
+insert into public.interesse(id, nome) VALUES(48, 'Maratonar séries');
+insert into public.interesse(id, nome) VALUES(49, 'Jogar basquete');
+insert into public.interesse(id, nome) VALUES(50, 'Empinar pipa');
+```
+
+ 

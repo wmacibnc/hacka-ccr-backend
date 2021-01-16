@@ -22,6 +22,15 @@ public class RedeSocial {
 	@OneToMany(mappedBy = "redeSocial", targetEntity = PessoaRedeSocial.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<PessoaRedeSocial> pessoaRedeSocial;
 
+	public RedeSocial() {
+		super();
+	}
+
+	public RedeSocial(Long id) {
+		super();
+		this.id = id;
+	}
+
 	public Long getId() {
 		return id;
 	}

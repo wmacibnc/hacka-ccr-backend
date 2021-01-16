@@ -1,7 +1,5 @@
 package com.hacka.ccr.model;
 
-import java.time.LocalDate;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,12 +12,15 @@ public class Interesse {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
-	private String email;
-	private LocalDate dataNascimento;
-	private String genero;
-	private String nacionalidade;
-	private String estadoCivil;
-	private Boolean possuiFilhos;
+	
+	public Interesse() {
+		super();
+	}
+
+	public Interesse(Long id) {
+		super();
+		this.id = id;
+	}
 
 	public Long getId() {
 		return id;
@@ -37,12 +38,5 @@ public class Interesse {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 }
