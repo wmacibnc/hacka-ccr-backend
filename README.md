@@ -13,6 +13,10 @@ Equipe:
 - rayssasanches
 - wmacibnc
 
+## Swagger
+
+URL: https://floating-reef-30152.herokuapp.com/swagger-ui.html  
+
 ## Instalação
 
 1. Baixe o Eclipse, conforme o seu sistema operacional: https://www.eclipse.org/downloads/ 
