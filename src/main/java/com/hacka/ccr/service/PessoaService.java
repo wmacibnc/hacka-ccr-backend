@@ -9,10 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hacka.ccr.controller.ResultadoAnaliseVocacionalEnum;
 import com.hacka.ccr.dto.AutenticacaoDTO;
 import com.hacka.ccr.dto.IdiomaNivelDTO;
 import com.hacka.ccr.dto.InteresseDTO;
 import com.hacka.ccr.dto.RedeSocialLinkDTO;
+import com.hacka.ccr.dto.ResultadoVocacionalDTO;
 import com.hacka.ccr.exception.CcrException;
 import com.hacka.ccr.model.Autenticacao;
 import com.hacka.ccr.model.Idioma;
@@ -21,12 +23,14 @@ import com.hacka.ccr.model.Pessoa;
 import com.hacka.ccr.model.PessoaIdioma;
 import com.hacka.ccr.model.PessoaInteresse;
 import com.hacka.ccr.model.PessoaRedeSocial;
+import com.hacka.ccr.model.PessoaVocacional;
 import com.hacka.ccr.model.RedeSocial;
 import com.hacka.ccr.repository.AutenticacaoRepository;
 import com.hacka.ccr.repository.PessoaIdiomaRepository;
 import com.hacka.ccr.repository.PessoaInteresseRepository;
 import com.hacka.ccr.repository.PessoaRedeSocialRepository;
 import com.hacka.ccr.repository.PessoaRepository;
+import com.hacka.ccr.repository.PessoaVocacionalRepository;
 
 @Service
 public class PessoaService {
@@ -45,6 +49,9 @@ public class PessoaService {
 	
 	@Autowired
 	private AutenticacaoRepository autenticacaoRepository;
+	
+	@Autowired
+	private PessoaVocacionalRepository pessoaVocacionalRepository;
 
 	@Transactional
 	public Pessoa salvar(Pessoa pessoa) throws CcrException {
@@ -208,6 +215,24 @@ public class PessoaService {
 		}
 		
 		return senhaCriptografada;
+	}
+
+	public void salvarRespostaVocacional(PessoaVocacional pessoaVocacional) {
+		pessoaVocacionalRepository.save(pessoaVocacional);
+	}
+
+	public ResultadoVocacionalDTO resultadoTesteVocacional(Long idPessoa) {
+		ResultadoVocacionalDTO dto = new ResultadoVocacionalDTO();
+		Integer maiorValor = 0;
+		List<PessoaVocacional> resultados = pessoaVocacionalRepository.obterPessoaVocacionalPorIdPessoa(idPessoa);
+		for(PessoaVocacional vocacao : resultados) {
+			if(vocacao.getValor() > maiorValor) {
+				maiorValor = vocacao.getValor();
+				dto.setTipo(vocacao.getTipo());
+				dto.setResultado(ResultadoAnaliseVocacionalEnum.obterValor(vocacao.getTipo()).getResultado());
+			}
+		}
+		return dto;
 	}
 
 }

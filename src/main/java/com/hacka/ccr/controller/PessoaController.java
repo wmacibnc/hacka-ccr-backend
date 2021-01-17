@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.hacka.ccr.dto.ResultadoVocacionalDTO;
 import com.hacka.ccr.exception.CcrException;
 import com.hacka.ccr.model.Pessoa;
+import com.hacka.ccr.model.PessoaVocacional;
 import com.hacka.ccr.service.PessoaService;
 
 @CrossOrigin
@@ -41,11 +43,21 @@ public class PessoaController {
 	public ResponseEntity<Pessoa> salvar(@RequestBody Pessoa pessoa) throws CcrException {
 		return new ResponseEntity<>(service.salvar(pessoa), HttpStatus.OK);
 	}
-
+	
 	@RequestMapping(method = RequestMethod.DELETE, value = "/excluir", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> excluir(@RequestParam(value = "numeroPessoa") Long numeroPessoa) throws CcrException {
 		service.excluir(numeroPessoa);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
-
+	
+	@RequestMapping(method = { RequestMethod.POST }, value = "/salvar-resposta-vocacional", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Void> salvarRespostaVocacional(@RequestBody PessoaVocacional pessoaVocacional) throws CcrException {
+		service.salvarRespostaVocacional(pessoaVocacional);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/resultado-teste-vocacional/{idPessoa}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody ResultadoVocacionalDTO resultadoTesteVocacional(@PathVariable(value = "idPessoa") Long idPessoa) throws CcrException {
+		return service.resultadoTesteVocacional(idPessoa);
+	}
 }
