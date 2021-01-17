@@ -7,7 +7,7 @@
 
 	<groupId>com.hacka</groupId>
 	<artifactId>ccr</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>ccr</name>
 
 	<description>Projeto backend do Hackathon CCR</description>
