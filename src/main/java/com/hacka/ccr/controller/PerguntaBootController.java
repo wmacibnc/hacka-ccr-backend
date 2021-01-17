@@ -27,9 +27,9 @@ public class PerguntaBootController {
 	@Autowired
 	private PerguntaBootService service;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/obter/{numeroPerguntaBoot}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody PerguntaBoot obter(@PathVariable(value = "numeroPerguntaBoot") Long numeroPerguntaBoot) throws CcrException {
-		return service.obter(numeroPerguntaBoot);
+	@RequestMapping(method = RequestMethod.GET, value = "/obter-por-tipo/{tipo}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody List<PerguntaBoot> obterPorTipo(@PathVariable(value = "tipo") String tipo) throws CcrException {
+		return service.obterPorTipo(tipo);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/consultar", produces = MediaType.APPLICATION_JSON_VALUE)

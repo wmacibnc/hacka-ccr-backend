@@ -21,8 +21,8 @@ public class PerguntaBootService {
 		return repository.save(perguntaBoot);
 	}
 
-	public PerguntaBoot obter(Long numeroProjeto) throws CcrException {
-		return repository.findById(numeroProjeto).get();
+	public List<PerguntaBoot> obterPorTipo(String tipo) throws CcrException {
+		return repository.obterPerguntaPorTipo(tipo);
 	}
 
 	public String excluir(Long numeroProjeto) throws CcrException {

@@ -1,7 +1,5 @@
 package com.hacka.ccr.model;
 
-import java.time.LocalDate;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +11,8 @@ public class PerguntaBoot {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String descricao;
+	private String tipo; // A a M
+	private String pergunta;
 
 	public Long getId() {
 		return id;
@@ -23,12 +22,20 @@ public class PerguntaBoot {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getPergunta() {
+		return pergunta;
+	}
+
+	public void setPergunta(String pergunta) {
+		this.pergunta = pergunta;
 	}
 
 }

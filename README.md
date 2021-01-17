@@ -545,4 +545,106 @@ insert into public.interesse(id, nome) VALUES(49, 'Jogar basquete');
 insert into public.interesse(id, nome) VALUES(50, 'Empinar pipa');
 ```
 
+--- Pergunta Boot
+
+```
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (1, 'A', 'Frequentar cursos relacionados com a natureza.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (2, 'A', 'Praticar jardinagem ou atividade correlata, como cuidar de um orquidário ou colecionar bromélias.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (3, 'A', 'Fazer caminhadas.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (4, 'A', 'Trabalhar na preservação da flora e da fauna.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (5, 'A', 'Cuidar de plantas e animais, atuando como agente regional de agricultura, ou florestal.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (6, 'A', 'Participar de competições esportivas.');
+
+
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (7, 'B', 'Participar de uma equipe marítima como encarregado(a) das máquinas.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (8, 'B', 'Trabalhar na torre de tráfego aéreo de um aerporto.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (9, 'B', 'Montar miniaturas de modelos de avião, carro ou navio.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (10, 'B', 'Atuar no controle e manutenção de uma usina elétrica.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (11, 'B', 'Construir maquetes.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (12, 'B', 'Trabalhar como instrutor(a) numa escola técnica profissional ou frequentar curso na mesma.');
+
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (13, 'C', 'Frequentar curso de Pesquisa Matemática Pura e Aplicada.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (14, 'C', 'Trabalhar como calculista em atividade relacionada com engenharia.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (15, 'C', 'Cursar Engenharia.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (16, 'C', 'Frequentar cursos de Contabilidade.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (17, 'C', 'Ser Engenheiro(a) de computação.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (18, 'C', 'Dar aulas de Matemática.');
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (19, 'D', 'Ser aviador.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (20, 'D', 'Frequentar curso na área de científica.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (21, 'D', 'Estudar a evolução tecnológica de veiculos automotores como automóveis, ou aviões.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (22, 'D', 'Trabalhar num setor ligado à Psicologia ou Psiquiatria.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (23, 'D', 'Ler livros e revistas sobre ficção científica.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (24, 'D', 'Ser membro de uma equipe de centro médico cirúrgico.');
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (25, 'E', 'Frequentar cursos na área de Direito.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (26, 'E', 'Estruturar e dirigir o departamento de compras e vendas de uma empresa.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (27, 'E', 'Trabalhar como entrevistador no setor de seleção de pessoal de uma empresa.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (28, 'E', 'Escrever artigos sobre técnicas de vendas.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (29, 'E', 'Trabalhar como Relações Públicas em uma empresa.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (30, 'E', 'Atuar como Jornalista na imprensa falsa, escrita ou televisiva.');
+
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (31, 'F', 'Frequentar curso na área artística.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (32, 'F', 'Dar aulas de Artes.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (33, 'F', 'Atuar na montagem de uma peça teatral na finalização dos cenários.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (34, 'F', 'Confeccionar home-pages.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (35, 'F', 'Visitar um Museu de Artes.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (36, 'F', 'Administrar uma galeria de artes.');
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (37, 'G', 'Ser professor de português.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (38, 'G', 'Trabalhar como advogado.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (39, 'G', 'Escrever artigos.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (40, 'G', 'Visitar a biblioteca nacional.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (41, 'G', 'Criar textos para propagandas.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (42, 'G', 'Ler poesia.');
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (43, 'H', 'Colecionar arquivos de música no computador(MP3, Midia ou similar).');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (44, 'H', 'Compor música.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (45, 'H', 'Trabalhar como Professor(a) de Música.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (46, 'H', 'Reger uma orquestra.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (47, 'H', 'Trabalhar como coletor de baladas e pesquisador de música e danças folclóricas.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (48, 'H', 'Participar de um coral.');
+
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (49, 'I', 'Ser Diretor(a) de um colégio de ensino fundamental ou médio.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (50, 'I', 'Atuar numa empresa como Diretor(a) de Pessoal.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (51, 'I', 'Trabalhar como Assistente Social num centro médico, escolar, de reabilitação ou psicológico.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (52, 'I', 'Atuar na área esportiva, na assistência a jovens carentes..');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (53, 'I', 'Atuar em Orientação Profissional.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (54, 'I', 'Participar como profissional de um centro de reabilitação.');
+
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (55, 'J', 'Trabalhar como digitador(a).');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (56, 'J', 'Implementar programa de qualidade em uma empresa.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (57, 'J', 'Organizar um arquivo que envolva números e letras.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (58, 'J', 'Dirigr uma agência de viagens e turismo.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (59, 'J', 'Desenvolver novos métodos de trabalhos.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (60, 'J', 'Atuar como Administrador(a) de uma empresa.');
+
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (61, 'L', 'Participar de grupos de jovens da igreja.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (62, 'L', 'Ouvir músicas sacras ou cantos gregorianos.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (63, 'L', 'Orar diariamente.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (64, 'L', 'Pesquisar a ocorrência de milagres.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (65, 'L', 'Visitar tempos religiosos.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (66, 'L', 'Trabalhar com comunidades fortalecendo a fé.');
+
+
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (67, 'M', 'Cumprir rigorosamente normas estabelecidas.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (68, 'M', 'Comandar pessoas.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (69, 'M', 'Ler livros relatando feitos heróicos.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (70, 'M', 'Participar de desfiles cívicos.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (71, 'M', 'Ter um apurado senso de responsabilidade.');
+insert into public.pergunta_boot(id, tipo, pergunta) VALUES (72, 'M', 'Ter amor a Pátria.');
+
+```
+
+
+
+
+
+
  

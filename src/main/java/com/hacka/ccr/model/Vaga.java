@@ -13,12 +13,25 @@ public class Vaga {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String titulo;
 	private String descricao;
 	private String requisitos;
 	private LocalDate dataVencimento;
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getDescricao() {
@@ -43,10 +56,6 @@ public class Vaga {
 
 	public void setDataVencimento(LocalDate dataVencimento) {
 		this.dataVencimento = dataVencimento;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 }
