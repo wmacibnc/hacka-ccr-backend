@@ -661,7 +661,11 @@ INSERT INTO public.noticia(
 -- Vaga
 
 ```
+insert into PUBLIC.vaga (id, data_vencimento, descricao, requisitos, titulo)
+VALUES (1,'2021-12-31', 'Atuar como digitador de documentos', 'Ter 18 anos ou mais e ensino médio completo.', 'Digitador de Documentos');
 
+insert into PUBLIC.vaga (id, data_vencimento, descricao, requisitos, titulo)
+VALUES (2,'2021-12-31', 'Atuar como auxiliar de cobrança', 'Estar cursando faculdade de direito.', 'Auxiliar de Cobrança');
 ```
 
  
